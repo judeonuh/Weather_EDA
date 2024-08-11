@@ -8,29 +8,14 @@ To run the analysis in the Jupyter Notebook effectively, please ensure the datas
 ## The Analysis.
 By exploring the weather data, I called the ".info()" function which revealed that our dataset contains 8784 records, 8 features, and no null values, The dataset also contains 4 features with 'float' datatype, 2 with 'int', and 2 with 'object' data type. To handle null values, I called the '.isnull().sum()' function, as this returns the sum of all the null values in every feature. The result confirmed our dataset has no null value. In addition, the dataset was found to have no duplicate records.
 
-The statistical summary of numerical features in the dataset revealed the mean, median, standard deviation etc. as shown below.
+The statistical summary of numerical features in the dataset revealed the mean, median, standard deviation etc. as shown below. The high variation in mean, median, or S.D, among features may pose a scaling issue. Hence the data may require scaling for more accurate analysis.
 
+![df.describe](df_describe.png)
 
+The exploration of our dataset also revealed some outliers, especially within the 'wind speed' and 'visibility' features. This was analysed using a boxplot on seaborn. The outliers observed may be due to extreme cases of these weather conditions or may just be errors in measurements.
 
+In addition, visualisation of the dataset, using a time-series graph revealed that relative humidity, wind speed, visibility and pressure were fairly stable all through the year. However, temperature and dew point temperature were both highest midway into the year. This also suggests that relative humidity, wind speed, visibility and pressure were fairly stable across all seasons in the year, while temperature and dew point temperature appeared to be highest during summer.
 
+Correlation matrices and heatmaps using seaborn revealed multicollinearity between 'temperature' and 'dew point temperature'. There was a high correlation between Temperature and Dew point temperature, and following the principle of multicollinearity, one of these independent variables will have to be dropped to prevent redundancy.
 
-
-Data Overview and Cleaning:
-What are the key characteristics of the dataset? (e.g., number of records, features, data types)###############
-Identify and handle any missing or null values. Describe your approach and reasoning.############
-Check for and address any duplicate records.############
-Statistical Summary:
-Provide a statistical summary of the dataset (mean, median, standard deviation, etc.) for numerical features.############
-Identify and describe any significant outliers in the data.
-Data Visualization:
-Create visualizations to show the distribution of key weather parameters (e.g., temperature, humidity, wind speed).
-Plot time series graphs to visualize trends over time. Highlight any notable patterns or seasonal variations.
-Create correlation matrices and heatmaps to identify relationships between different weather parameters.
-Weather Patterns and Trends:
-Analyze and describe any trends or patterns you observe in the data. For instance, how do temperature and humidity vary across different seasons or months?
-Investigate any anomalies or unusual patterns in the data. What might be the reasons for these anomalies?
-Insights and Conclusions:
-Summarize the key insights you have gained from your EDA. What are the most interesting or surprising findings?
-How can these insights be useful for weather prediction or other practical applications?
-Recommendations for Further Analysis:
-Suggest areas for further analysis or additional data that might be useful to explore.
+Furthermore, by visualising the distribution of the features in this dataset, we find that appeared to be normally distributed.
