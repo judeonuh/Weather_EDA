@@ -18,4 +18,8 @@ In addition, visualisation of the dataset, using a time-series graph revealed th
 
 Correlation matrices and heatmaps using seaborn revealed multicollinearity between 'temperature' and 'dew point temperature'. There was a high correlation between Temperature and Dew point temperature, and following the principle of multicollinearity, one of these independent variables will have to be dropped to prevent redundancy.
 
-Furthermore, by visualising the distribution of the features in this dataset, we find that appeared to be normally distributed.
+Furthermore, our EDA shows that features in this dataset exhibit a normal distribution. However, the distribution graph for 'visibility_km' was observed to be very small. This anomaly could be due to scaling problem as all the features tend to have different measurements scales. 
+
+## Recommendation for Further Analysis
+* Conducting feature scaling of the data to ensure all feature measurements are on the same scale.
+* Logistic Regression Analysis for predictive modelling. This might first require encoding of categogerical variable like "Weather"
